@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private int numberOfClicks = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,10 +55,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickButtonOnClick(View v) {
-        Button clickButton = (Button) v;
-        clickButton.setText("Clicked!");
-
+        this.numberOfClicks++;
         TextView clickedText = (TextView) findViewById(R.id.clickedTextView);
-        clickedText.setText("Button clicked");
+        clickedText.setText("Clicks: " + this.numberOfClicks);
     }
 }
